@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.spinner {
+  margin: 0 auto;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+@mixin selection-disabled {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  @include selection-disabled;
+}

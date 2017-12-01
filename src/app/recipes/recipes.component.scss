@@ -1,0 +1,23 @@
+.card-image {
+  width: 200px;
+  height: 200px;
+}
+
+mat-card {
+  padding-bottom: 0;
+  background: #F6F6F6;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    background: url('/assets/images/recipe.png') no-repeat;
+    background-color: #DDDDDD;
+  }
+}
+
+mat-card-header {
+  width: 150px;
+  height: 50px;
+}

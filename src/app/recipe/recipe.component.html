@@ -1,0 +1,22 @@
+<div class="centered-text">
+  <button mat-icon-button aria-label="Back" (click)="search()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+<p></p>
+<mat-spinner mode="indeterminate" *ngIf="showSpinner" class="spinner"></mat-spinner>
+<div class="centered-text" *ngIf="!showSpinner">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ recipe?.label }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ recipe?.image }}" alt="Photo of {{ recipe?.label }}">
+    <mat-card-content>
+      <p>By <i>{{ recipe.source }}</i></p>
+      <p><u>Ingredients</u></p>
+      <ul class="ingredients">
+        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient.text }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

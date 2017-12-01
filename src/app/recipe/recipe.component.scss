@@ -1,0 +1,26 @@
+mat-icon {
+  font-size: 36px;
+}
+
+.card-image {
+  width: 400px;
+  height: 400px;
+}
+
+mat-card {
+  width: 500px;
+  margin: auto;
+  background: #F6F6F6;
+}
+
+mat-card-header {
+  mat-card-title {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.ingredients {
+  padding-left: 0;
+  list-style: none;
+}
