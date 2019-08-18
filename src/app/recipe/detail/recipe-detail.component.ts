@@ -13,7 +13,6 @@ export class RecipeDetailComponent {
 
     setSelectedRecipe(recipe: Recipe) {
         this.selectedRecipe = recipe;
-        console.log(this.selectedRecipe);
     }
 
     getNutrients() {

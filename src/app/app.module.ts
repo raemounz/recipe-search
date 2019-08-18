@@ -13,10 +13,12 @@ import { RecipeService } from './shared/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AutoFocusDirective } from './shared/autofocus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AutoFocusDirective,
     RecipeComponent,
     RecipeListComponent,
     RecipeDetailComponent

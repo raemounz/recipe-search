@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { MatFormFieldModule, MatIconModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
     imports: [

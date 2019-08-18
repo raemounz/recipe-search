@@ -10,7 +10,7 @@
                 <div fxFlex.gt-md="350px" fxFlex.md="350px" fxFlex.lt-md="275px" fxLayout="column" class="card-search">
                     <div fxFlex="60px" class="search-field">
                         <mat-form-field>
-                            <input type="search" matInput autofocus [(ngModel)]="searchItem" (keydown)="onKeyDown($event)">
+                            <input type="search" matInput appAutoFocus [(ngModel)]="searchItem" (keydown)="onKeyDown($event)">
                             <mat-icon matSuffix class="card-search-icon" (click)="search()">search</mat-icon>
                         </mat-form-field>                
                     </div>

@@ -25,6 +25,7 @@ export class RecipeListComponent {
             this.from = 0;
             this.to = 15;
             this.recipes = [];
+            this.sendSelectedRecipe(-1);
         }
         this.inProgress = true;
         this.searchItem = searchItem || '';
@@ -59,6 +60,7 @@ export class RecipeListComponent {
             }
         }, error => {
             console.log(error);
+            this.inProgress = false;
         }, () => {
             this.inProgress = false;
         });
