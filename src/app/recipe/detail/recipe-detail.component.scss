@@ -2,6 +2,12 @@
     height: 100%;
 }
 
+.no-recipe {
+    margin: auto;
+    font-size: 20em;
+    color: rgba(0, 0, 0, .1);
+}
+
 .detail-title {
     font-weight: bold;
     font-size: 1.8em;
@@ -72,5 +78,18 @@
             border-bottom: 1px solid;
             padding: 5px 0;
         }
+    }
+}
+
+.recipe-source {
+    margin: 20px 20px 0 20px;
+}
+
+.recipe-source-link {
+    color: #cc0000;
+    &:hover {
+        font-weight: bold;
+        cursor: pointer;
+        color: #db4c4c;
     }
 }

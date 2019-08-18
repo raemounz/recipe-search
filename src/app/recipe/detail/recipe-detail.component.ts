@@ -22,4 +22,8 @@ export class RecipeDetailComponent {
     indent(label: string) {
         return this.fats.includes(label) || this.carbs.includes(label);
     }
+
+    goToLink(link: string) {
+        window.open(link, '_blank');
+    }
 }

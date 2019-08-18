@@ -1,16 +1,25 @@
+<div class="detail-container" fxLayout="column" *ngIf="!selectedRecipe">
+    <div fxFlex></div>
+    <i class="material-icons no-recipe">local_dining</i>
+    <div fxFlex></div>
+</div>
 <div class="detail-container" fxLayout="column" *ngIf="selectedRecipe">
     <div class="detail-title">{{selectedRecipe.label}}</div>
     <img class="detail-image mat-elevation-z1" [src]="selectedRecipe.image"/>
+    <!-- Source -->
+    <div class="recipe-source">
+        Source:  <span class="recipe-source-link" (click)="goToLink(selectedRecipe.sourceUrl)">{{selectedRecipe.source}}</span>
+    </div>        
     <div fxFlex="10px"></div>
     <!-- Diet Label -->
-    <div class="detail-list mat-elevation-z1">
+    <div class="detail-list mat-elevation-z1" *ngIf="selectedRecipe.dietLabels?.length > 0">
         <div class="detail-list-title">Diet Information</div>
         <div class="detail-list-items">
             <div class="label mat-elevation-z1" *ngFor="let diet of selectedRecipe.dietLabels">{{diet}}</div>
         </div>
     </div>
     <!-- Health Label -->
-    <div class="detail-list mat-elevation-z1">
+    <div class="detail-list mat-elevation-z1" *ngIf="selectedRecipe.healthLabels?.length > 0">
         <div class="detail-list-title">Health Information</div>
         <div class="detail-list-items">
             <div class="label mat-elevation-z1" *ngFor="let health of selectedRecipe.healthLabels">{{health}}</div>
