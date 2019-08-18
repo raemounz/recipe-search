@@ -6,12 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Recipe Search Preview](src/assets/preview.png)
 
-## Prerequisite
-
-Go to `https://developer.edamam.com/edamam-recipe-api` and sign up for `Recipe Search API`.  Once signed up, create a new application to get your `Application ID` and `Application Keys`.
-
-Update the `app_id` and `app_key` in `environment.ts`.
-
 ## Installation
 
 Run `npm install` to install the necessary packages.
