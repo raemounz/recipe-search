@@ -1,26 +1,42 @@
-mat-icon {
-  font-size: 36px;
+.container {
+    height: 100%;
 }
 
-.card-image {
-  width: 400px;
-  height: 400px;
-}
-
-mat-card {
-  width: 500px;
-  margin: auto;
-  background: #F6F6F6;
-}
-
-mat-card-header {
-  mat-card-title {
-    font-size: 25px;
+.card-title {
+    background: #000;
+    color: #fff;
     font-weight: bold;
-  }
+    line-height: 48px;
+    padding-left: 20px;
+    font-size: 1.2em;
 }
 
-.ingredients {
-  padding-left: 0;
-  list-style: none;
+.card-title-icon {
+    vertical-align: middle;
+    padding-right: 20px;
+    color: #cc0000;
+}
+
+.card-search {
+    background: rgba(0, 0, 0, 0.8);
+    .search-field {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+.card-search-icon {
+    color: #fff;
+    &:hover {
+        cursor: pointer; 
+    }
+}
+
+::ng-deep mat-form-field {
+    color: #fff !important;
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+    background: #fff !important;
 }

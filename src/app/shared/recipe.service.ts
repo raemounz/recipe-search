@@ -1,22 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Recipe } from './recipe';
-import { Hit } from './hit';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class RecipeService {
-  recipesUrl = 'https://api.edamam.com/search?';
-  recipeUrl = 'http://www.edamam.com/ontologies/edamam.owl%23';
-  constructor(private http: HttpClient) {}
+    apiUrl = `https://api.edamam.com/search?app_id=${environment.app_id}&app_key=${environment.app_key}`;
 
-  getRecipes(q: string, from: number, to: number): Observable<Hit[]> {
-    const query = this.recipesUrl + 'q=' + q + '&from=' + from + '&to=' + to;
-    return this.http.get<Hit[]>(query);
-  }
+    constructor(private http: HttpClient) {}
 
-  getRecipe(uri: string): Observable<Recipe> {
-    return this.http.get<Recipe>(this.recipesUrl + 'r=' + this.recipeUrl + uri);
-  }
-
+    getRecipes(q: string, from: number, to: number): Observable<Recipe[]> {
+        return this.http.get<Recipe[]>(`${this.apiUrl}&q=${q}&from=${from}&to=${to}`);
+    }
 }

@@ -1,0 +1,43 @@
+<div class="detail-container" fxLayout="column" *ngIf="selectedRecipe">
+    <div class="detail-title">{{selectedRecipe.label}}</div>
+    <img class="detail-image mat-elevation-z1" [src]="selectedRecipe.image"/>
+    <div fxFlex="10px"></div>
+    <!-- Diet Label -->
+    <div class="detail-list mat-elevation-z1">
+        <div class="detail-list-title">Diet Information</div>
+        <div class="detail-list-items">
+            <div class="label mat-elevation-z1" *ngFor="let diet of selectedRecipe.dietLabels">{{diet}}</div>
+        </div>
+    </div>
+    <!-- Health Label -->
+    <div class="detail-list mat-elevation-z1">
+        <div class="detail-list-title">Health Information</div>
+        <div class="detail-list-items">
+            <div class="label mat-elevation-z1" *ngFor="let health of selectedRecipe.healthLabels">{{health}}</div>
+        </div>
+    </div>
+    <!-- Ingredients -->
+    <div class="detail-list mat-elevation-z1">
+        <div class="detail-list-title">Ingredients</div>
+        <div class="detail-list-items">
+            <div *ngFor="let ingredient of selectedRecipe.ingredients">{{ingredient}}</div>
+        </div>
+    </div>
+    <!-- Nutrients -->
+    <div class="nutrient-list mat-elevation-z1">
+        <div class="nutrient-list-title">Nutrition Facts</div>
+        <div class="calories-list-items">
+            <div class="calories" fxLayout="row">
+                <div fxFlex>Calories</div>
+                <div fxFlex class="nutrient-list-value">{{selectedRecipe.calories.toFixed(2) | number}} kcal</div>
+            </div>
+        </div>
+        <div class="nutrient-list-items">
+            <div fxLayout="row" class="nutrient-list-item" *ngFor="let nutrient of getNutrients()">
+                <div fxFlex class="nutrient-list-label" [ngClass]="{'label-indent': indent(nutrient.label)}">{{nutrient.label}}</div>
+                <div fxFlex class="nutrient-list-value">{{nutrient.quantity.toFixed(2) | number}} {{nutrient.unit}}</div>
+            </div>
+        </div>
+    </div>
+    <div fxFlex></div>
+</div>

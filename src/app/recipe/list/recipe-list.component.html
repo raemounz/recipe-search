@@ -1,0 +1,15 @@
+<div class="recipe-list-container">
+    <div fxLayout="column" ngClass.lt-md="progress-spinner-lt-md" class="progress-spinner" *ngIf="inProgress">
+        <div fxFlex></div>
+        <mat-spinner></mat-spinner> 
+        <div fxFlex></div> 
+    </div>
+    <div ngClass.lt-md="list-container-lt-md" class="list-container" infiniteScroll [infiniteScrollDistance]="0" [infiniteScrollDisabled]="inProgress" [scrollWindow]="false" (scrolled)="onScroll()">
+        <div *ngFor="let recipe of recipes; let i = index" fxLayout="row" class="recipe-item" (click)="sendSelectedRecipe(i)">
+            <img src="{{recipe.image}}" class="recipe-image"/>
+            <div fxLayout="column" class="recipe-summary" [ngClass]="{'recipe-selected': i === selectedRecipeIndex}">
+                <div fxFlex class="recipe-label">{{recipe.label}}</div>
+            </div>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,76 @@
+.detail-container {
+    height: 100%;
+}
+
+.detail-title {
+    font-weight: bold;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.detail-image {
+    margin: auto;
+}
+
+.detail-list {
+    margin: 10px 20px 5px 20px;
+    .detail-list-title {
+        background: rgba(0, 0, 0, .7);
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+    }
+    .detail-list-items {
+        background: rgba(0, 0, 0, .1);;
+        padding: 10px;
+    }
+}
+
+.label {
+    font-size: .8em;
+    border: 1px solid;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin: 0 8px 3px 0;
+    display: inline-block;
+}
+
+.nutrient-list {
+    margin: 10px 20px 20px 20px;
+    .nutrient-list-title {
+        margin: 10px;
+        font-weight: bold;
+        font-size: 1.4em;
+        border-bottom: 4px solid;
+        padding-bottom: 5px;
+    }
+    .calories {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .calories-list-items {
+        border-bottom: 2px solid;
+        padding-bottom: 10px;
+        margin: 10px 10px 0 10px;
+    }
+    .nutrient-list-label {
+        font-weight: bold;
+    }
+    .label-indent {
+        margin-left: 40px;
+        font-weight: normal !important;
+    }
+    .nutrient-list-value {
+        text-align: right;
+    }
+    .nutrient-list-items {
+        margin: 10px;
+        padding-bottom: 10px;
+        border-bottom: 4px solid;
+        .nutrient-list-item {
+            border-bottom: 1px solid;
+            padding: 5px 0;
+        }
+    }
+}

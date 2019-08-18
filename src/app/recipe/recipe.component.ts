@@ -1,43 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
 import { RecipeService } from '../shared/recipe.service';
+import { RecipeListComponent } from './list/recipe-list.component';
 import { Recipe } from '../shared/recipe';
-import { QueryDataService } from '../shared/query-data.service';
-
+import { RecipeDetailComponent } from './detail/recipe-detail.component';
 
 @Component({
-  moduleId: module.id,
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.scss']
+    templateUrl: './recipe.component.html',
+    styleUrls: ['./recipe.component.scss']
 })
-export class RecipeComponent implements OnInit {
-  showSpinner = false;
-  recipe: Recipe;
-  query: string;
-  constructor (private router: Router, private activatedRoute: ActivatedRoute, private recipeService: RecipeService,
-               private queryDataService: QueryDataService) {
-    this.query = queryDataService.queryData;
-  }
+export class RecipeComponent {
+    searchItem: string;
+    @ViewChild(RecipeListComponent, {static: false}) recipeList: RecipeListComponent;
+    @ViewChild(RecipeDetailComponent, {static: false}) recipeDetail: RecipeDetailComponent;
 
-  ngOnInit(): void {
-    this.showSpinner = true;
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.recipeService.getRecipe(id).subscribe(
-      (data) => {
-        this.recipe = data[0];
-      }, (error) => {
-        console.log(error);
-      }, () => {
-        this.showSpinner = false;
-      }
-    );
-  }
+    constructor(private recipeService: RecipeService) {}
 
-  search() {
-    if (this.query) {
-      this.router.navigate(['/recipes', this.query]);
-    } else {
-      this.router.navigate(['/recipes']);
+    search() {
+        this.recipeList.search(this.searchItem);
     }
-  }
+
+    onKeyDown(event: KeyboardEvent) {
+        if (event.code === 'Enter') {
+            this.search();
+        }
+    }
+
+    setSelectedRecipe(recipe: Recipe) {
+        this.recipeDetail.setSelectedRecipe(recipe);
+    }
 }

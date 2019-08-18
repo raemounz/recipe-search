@@ -1,0 +1,61 @@
+.recipe-list-container {
+    position: relative;
+    height: 100%;
+}
+
+.list-container {
+    height: 100%;
+    overflow-y: scroll;
+    color: #fff;
+}
+
+.list-container-lt-md {
+    height: 215px !important;
+}
+
+.recipe-item {
+    margin: 5px;
+    height: 100px;
+    background: rgba(0, 0, 0, .2);
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+        background: #cc0000;
+        font-weight: bold;
+        .health-label {
+            background: #fff;
+            color: #cc0000;
+        }
+    }
+}
+
+.recipe-image {
+    width: 100px;
+    max-width: 100px;
+    background: url('https://www.edamam.com/web-img/e6e/e6ed57e436a0a1286b477534cd56ba24.jpg') no-repeat;
+    background-size: cover;
+}
+
+.recipe-summary {
+    padding: 5px 10px;
+    width: calc(100% - 100px);
+}
+
+.recipe-selected {
+    background: #cc0000 !important;
+}
+
+.progress-spinner {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+}
+
+.progress-spinner-lt-md {
+    height: 215px !important;
+}
+
+mat-spinner {
+    margin: auto;
+}

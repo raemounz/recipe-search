@@ -1,22 +1,30 @@
-<div class="centered-text">
-  <button mat-icon-button aria-label="Back" (click)="search()">
-    <mat-icon>arrow_back</mat-icon>
-  </button>
+<div fxLayout="column" class="container">
+    <div fxFlex="20px"></div>
+    <div fxFlex fxLayout="row">
+        <div fxFlex.xs="20px" fxFlex.gt-xs="100px" fxFlex.gt-md="200px"></div>
+        <div fxFlex fxLayout="column" class="mat-elevation-z8">
+            <div fxFlex="48px" class="card-title mat-elevation-z1">
+                <i class="material-icons card-title-icon">local_dining</i><span>Recipe Search</span>
+            </div>
+            <div fxFlex="calc(100vh - 88px)" style="overflow: hidden" fxLayout.gt-md="row" fxLayout.md="row" fxLayout.lt-md="column">
+                <div fxFlex.gt-md="350px" fxFlex.md="350px" fxFlex.lt-md="275px" fxLayout="column" class="card-search">
+                    <div fxFlex="60px" class="search-field">
+                        <mat-form-field>
+                            <input type="search" matInput autofocus [(ngModel)]="searchItem" (keydown)="onKeyDown($event)">
+                            <mat-icon matSuffix class="card-search-icon" (click)="search()">search</mat-icon>
+                        </mat-form-field>                
+                    </div>
+                    <div fxFlex="calc(100% - 60px)" style="overflow: auto">
+                        <app-recipe-list (selectedRecipe)="setSelectedRecipe($event)"></app-recipe-list>
+                    </div> 
+                </div>
+                <div fxFlex style="overflow: auto">
+                    <app-recipe-detail></app-recipe-detail>
+                </div>
+            </div>            
+        </div>
+        <div fxFlex.xs="20px" fxFlex.gt-xs="100px" fxFlex.gt-md="200px"></div>
+    </div>
+    <div fxFlex="20px"></div>
 </div>
-<p></p>
-<mat-spinner mode="indeterminate" *ngIf="showSpinner" class="spinner"></mat-spinner>
-<div class="centered-text" *ngIf="!showSpinner">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ recipe?.label }}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="{{ recipe?.image }}" alt="Photo of {{ recipe?.label }}">
-    <mat-card-content>
-      <p>By <i>{{ recipe.source }}</i></p>
-      <p><u>Ingredients</u></p>
-      <ul class="ingredients">
-        <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient.text }}</li>
-      </ul>
-    </mat-card-content>
-  </mat-card>
-</div>
+

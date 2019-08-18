@@ -1,13 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-.spinner {
-  margin: 0 auto;
-}
-
-.centered-text {
-  text-align: center;
-}
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @mixin selection-disabled {
   -webkit-user-select: none;
@@ -15,8 +7,10 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+  
 body {
+  margin: 0;
+  height: 100vh;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   @include selection-disabled;
 }

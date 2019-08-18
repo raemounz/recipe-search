@@ -1,42 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeComponent } from './recipe/recipe.component';
+import { MaterialModule } from './shared/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RecipeListComponent } from './recipe/list/recipe-list.component';
+import { RecipeDetailComponent } from './recipe/detail/recipe-detail.component';
 import { RecipeService } from './shared/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MaterialModule } from './shared/material.module';
-import { RecipesComponent } from './recipes/recipes.component';
-import { AppRoutingModule } from './app-routing.module';
-import { RecipeComponent } from './recipe/recipe.component';
+import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { QueryDataService } from './shared/query-data.service';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
-    RecipesComponent
+    RecipeListComponent,
+    RecipeDetailComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     FormsModule,
     MaterialModule,
     FlexLayoutModule,
-    InfiniteScrollModule,
-    AppRoutingModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
-  providers: [
-    RecipeService,
-    QueryDataService
-  ],
-  bootstrap: [
-    AppComponent
-  ]
+  providers: [RecipeService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
