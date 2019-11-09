@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
 ## Preview
+[<span style="font-size:16px">Live Demo</span>](https://stackblitz.com/github/raemounz/recipe-search)
 
 ![Recipe Search Preview](src/assets/preview.png)
 
