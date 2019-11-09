@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { RecipeService } from 'src/app/shared/recipe.service';
-import { Recipe } from 'src/app/shared/recipe';
-import { Nutrient } from 'src/app/shared/nutrient';
+import { RecipeService } from '../../../../src/app/shared/recipe.service';
+import { Recipe } from '../../../../src/app/shared/recipe';
+import { Nutrient } from '../../../../src/app/shared/nutrient';
 
 @Component({
     selector: 'app-recipe-list',
