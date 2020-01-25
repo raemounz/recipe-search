@@ -7,6 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Recipe Search Preview](src/assets/preview.png)
 
+## Prerequisite
+Sign up to Edamam's <strong>Recipe Search API</strong> in `https://developer.edamam.com`.  Then update the `app_id` and `app_key` in `environment.ts`.
+
 ## Installation
 
 Run `npm install` to install the necessary packages.
