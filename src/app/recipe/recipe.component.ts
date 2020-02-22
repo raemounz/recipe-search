@@ -10,8 +10,8 @@ import { RecipeDetailComponent } from './detail/recipe-detail.component';
 })
 export class RecipeComponent {
     searchItem: string;
-    @ViewChild(RecipeListComponent, {static: false}) recipeList: RecipeListComponent;
-    @ViewChild(RecipeDetailComponent, {static: false}) recipeDetail: RecipeDetailComponent;
+    @ViewChild(RecipeListComponent) recipeList: RecipeListComponent;
+    @ViewChild(RecipeDetailComponent) recipeDetail: RecipeDetailComponent;
 
     constructor(private recipeService: RecipeService) {}
 
